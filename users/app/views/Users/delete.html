@@ -1,0 +1,15 @@
+#{extends 'main.html' /}
+#{set title:'Delete User Confirm' /}
+ <h4>#{get 'title'/} ${user.name}</h4>
+ 	#{form @Users.Delete(), class:'form-horizontal'}
+	<input type="text" name="id" value="${user.id}" hidden/>
+	<div>
+		 <label for="name">Select delete status :</label>
+		 <p>
+			 <input type="radio" id="status1" name="status" value="true"> Yes<br>
+			 <input type="radio" id="status2" name="status" value="false" checked="checked"> No<br>
+		 </p>
+	</div>
+ 			<button type="submit" id="ok">Submit</button>
+ 			<p>#{a @Users.index(),id:"back"}Back to Home#{/a}</p>
+ #{/form}

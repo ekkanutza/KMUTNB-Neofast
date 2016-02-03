@@ -1,0 +1,15 @@
+#{extends 'main.html' /}
+#{set title:'Edit User' /}
+ <h4>#{get 'title'/}</h4>
+ 	#{form @Users.edit(), class:'form-horizontal'}
+ 		<input type="text" name="id" value="${user.id}" hidden/>
+ 		<div>
+ 			<label for="name">Name :</label>
+ 			<p>
+ 				<input id="name" type="text" name="name" value="${user.name}"/>
+ 			</p>
+ 		</div>
+ 			<button type="submit" id="ok">Edit</button>
+ 			<button type="reset" id="reset">Reset</button>
+ 			<p>#{a @Users.index(),id:"back"}Back to Home#{/a}</p>
+ #{/form}

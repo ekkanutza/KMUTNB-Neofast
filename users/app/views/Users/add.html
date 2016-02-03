@@ -1,0 +1,12 @@
+#{extends 'main.html' /}
+#{set title:'Create a new Users' /}
+<h4>#{get 'title'/}</h4>
+#{form @Users.add()}
+ 	<label for="name">Name:</label>
+ <p>
+ 	<input id="name" type="text" name="name" />
+ </p>
+	<button type="submit" id="ok">Create</button>
+	<button type="reset" id="reset">Reset</button>
+#{/form}
+<p>#{a @Users.index(),id:"back"}Back to Home#{/a}</p> 

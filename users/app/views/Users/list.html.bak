@@ -1,0 +1,16 @@
+#{extends 'main.html' /}
+#{set title:'Users List' /}
+<h4>#{get 'title'/}</h4>
+#{ifnot users}
+	<p>No User</p>
+#{/ifnot}
+<ul>
+ 	#{list items:users, as:'user' }
+ 		<li>
+			#{a @Users.edit(user.id),id:"edit_"+user.id+""}Edit#{/a} 
+ 			${user.name}
+ 		</li>
+#{/list}
+</ul>
+
+<p>#{a @Users.add(),id:"create"}Create new user#{/a}</p>
